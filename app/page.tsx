@@ -9,7 +9,7 @@ const hiraganaToKeys: { [key: string]: string[] } = {
   あ: ["S", "space"],
   い: ["L"],
   う: ["A"],
-    え: ["W", "space"],
+  え: ["W", "space"],
   お: ["J", "space"],
   か: ["W"],
   き: ["K"],
@@ -65,7 +65,7 @@ const hiraganaToKeys: { [key: string]: string[] } = {
   ゃ: ["R", "space"],
   ゅ: ["F", "space"],
   ょ: ["L", "space"],
-}
+};
 
 export default function NicolaKeyboard() {
   const [highlightedKeys, setHighlightedKeys] = useState<string[]>([])
@@ -78,21 +78,37 @@ export default function NicolaKeyboard() {
   }
 
   return (
-    <div className="container mx-auto p-4 max-w-4xl">
-      <h1 className="text-2xl font-bold mb-6 text-center">NICOLA Keyboard Layout Trainer</h1>
-      <div className="grid gap-6">
-        <Card className="border-2">
-          <CardContent className="p-6">
-            <HiraganaTable onHiraganaClick={handleHiraganaClick} selectedHiragana={selectedHiragana} />
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent className="p-6">
-            <Keyboard highlightedKeys={highlightedKeys} />
-          </CardContent>
-        </Card>
+    <>
+      <div className="container mx-auto p-4 max-w-4xl">
+        <h1 className="text-2xl font-bold mb-6 text-center">
+          NICOLA Keyboard Layout Trainer
+        </h1>
+        <div className="grid gap-6">
+          <Card className="border-2">
+            <CardContent className="p-6">
+              <HiraganaTable
+                onHiraganaClick={handleHiraganaClick}
+                selectedHiragana={selectedHiragana}
+              />
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="p-6">
+              <Keyboard highlightedKeys={highlightedKeys} />
+            </CardContent>
+          </Card>
+        </div>
       </div>
-    </div>
-  )
+      <footer className="text-center mt-6">
+        <a
+          href="https://github.com/FlechaMaker/nicola-ansi-locator"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub Repository
+        </a>
+      </footer>
+    </>
+  );
 }
 
