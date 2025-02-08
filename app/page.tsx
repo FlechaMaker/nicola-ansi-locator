@@ -83,6 +83,16 @@ export default function NicolaKeyboard() {
         <h1 className="text-2xl font-bold mb-6 text-center">
           NICOLA Keyboard Layout Trainer
         </h1>
+        <p className="text-center mb-6">
+          <a
+            href="https://github.com/FlechaMaker/karabiner_nicola_for_ansi_iso"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 underline"
+          >
+            物理キーレイアウト：ANSI
+          </a>
+        </p>
         <div className="grid gap-6">
           <Card className="border-2">
             <CardContent className="p-6">
